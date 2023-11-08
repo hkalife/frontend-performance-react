@@ -37,24 +37,28 @@ const ProductList: React.FC<Props> = (props) => {
       <h3>People</h3>
 
       <table id="shared-table" align="center">
-        <tr>
-          <th>ID</th>
-          <th>Product name</th>
-          <th>ISBN</th>
-          <th>Price</th>
-          <th>Department</th>
-          <th>Description</th>
-        </tr>
-        {mockProductData().map((person) =>
+        <thead>
           <tr>
-            <td>{ person.id }</td>
-            <td>{ person.productName }</td>
-            <td>{ person.isbn }</td>
-            <td>{ person.price }</td>
-            <td>{ person.department }</td>
-            <td>{ person.description }</td>
+            <th>ID</th>
+            <th>Product name</th>
+            <th>ISBN</th>
+            <th>Price</th>
+            <th>Department</th>
+            <th>Description</th>
           </tr>
-        )}
+        </thead>
+        <tbody>
+          {mockProductData().map((person) =>
+            <tr key={person.id}>
+              <td>{ person.id }</td>
+              <td>{ person.productName }</td>
+              <td>{ person.isbn }</td>
+              <td>{ person.price }</td>
+              <td>{ person.department }</td>
+              <td>{ person.description }</td>
+            </tr>
+          )}
+        </tbody>
       </table>
     </>
   )

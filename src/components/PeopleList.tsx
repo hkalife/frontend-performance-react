@@ -39,24 +39,28 @@ const PeopleList: React.FC<Props> = (props) => {
       <h3>People</h3>
 
       <table id="shared-table" align="center">
-        <tr>
-          <th>ID</th>
-          <th>Prefix</th>
-          <th>Full name</th>
-          <th>Gender</th>
-          <th>Job Area</th>
-          <th>Birthdate</th>
-        </tr>
-        {mockPeopleData().map((person) =>
+        <thead>
           <tr>
-            <td>{ person.id }</td>
-            <td>{ person.prefix }</td>
-            <td>{ person.fullName }</td>
-            <td>{ person.gender }</td>
-            <td>{ person.jobArea }</td>
-            <td>{ person.birthdate }</td>
+            <th>ID</th>
+            <th>Prefix</th>
+            <th>Full name</th>
+            <th>Gender</th>
+            <th>Job Area</th>
+            <th>Birthdate</th>
           </tr>
-        )}
+        </thead>
+        <tbody>
+          {mockPeopleData().map((person) =>
+            <tr key={person.id}>
+              <td>{ person.id }</td>
+              <td>{ person.prefix }</td>
+              <td>{ person.fullName }</td>
+              <td>{ person.gender }</td>
+              <td>{ person.jobArea }</td>
+              <td>{ person.birthdate }</td>
+            </tr>
+          )}
+        </tbody>
       </table>
     </>
   )
